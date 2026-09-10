@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="梅西耶天体个人天文摄影作品集 —— 星团、星云与星系。">
+  <title>梅西耶之旅 · Messier Journey</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="blackhole" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-head">
+    <span class="eyebrow">Deep Sky Astrophotography</span>
+    <h1>梅西耶之旅</h1>
+    <p class="subtitle">
+      从蟹状星云的爆发余烬，到仙女座星系的百万光年尺度 ——
+      这是我用镜头记录下的梅西耶天体，共 <span class="accent">56</span> 个目标。
+    </p>
+    <div class="rule"></div>
+  </header>
+
+  <div class="status">
+    <span id="stat">加载中…</span>
+    <span class="counter" id="pageLabel">01 / 01</span>
+  </div>
+
+  <main class="grid" id="grid"></main>
+
+  <nav class="pager" id="pager" aria-label="分页导航"></nav>
+
+  <footer class="site-foot">
+    梅西耶之旅 · Messier Journey &nbsp;|&nbsp; 点击图片可放大 &nbsp;|&nbsp;
+    键盘 <span class="accent">←</span> <span class="accent">→</span> 翻页
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片预览">
+    <button class="lb-close" id="lbClose" aria-label="关闭">&times;</button>
+    <img id="lbImg" alt="">
+    <div class="lb-cap" id="lbCap"></div>
+  </div>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/blackhole.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
