@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="梅西耶天体个人天文摄影作品集 —— 星团、星云与星系。">
-  <title>梅西耶之旅 · Messier Journey</title>
+  <meta name="description" content="个人天文摄影作品集 —— 梅西耶天体与非梅西耶深空天体，包含星团、星云与星系。">
+  <title>梅西耶之旅 · Deep Sky Journey</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,12 +15,14 @@
   <header class="site-head">
     <span class="eyebrow">Deep Sky Astrophotography</span>
     <h1>梅西耶之旅</h1>
-    <p class="subtitle">
-      从蟹状星云的爆发余烬，到仙女座星系的百万光年尺度 ——
-      这是我用镜头记录下的梅西耶天体，共 <span class="accent">56</span> 个目标。
-    </p>
+    <p class="subtitle" id="subtitle"></p>
     <div class="rule"></div>
   </header>
+
+  <div class="tabs" id="tabs" role="tablist" aria-label="天体类别">
+    <button class="tab active" data-cat="messier" role="tab" aria-selected="true">梅西耶天体</button>
+    <button class="tab" data-cat="deepsky" role="tab" aria-selected="false">深空天体</button>
+  </div>
 
   <div class="status">
     <span id="stat">加载中…</span>
@@ -32,17 +34,25 @@
   <nav class="pager" id="pager" aria-label="分页导航"></nav>
 
   <footer class="site-foot">
-    梅西耶之旅 · Messier Journey &nbsp;|&nbsp; 点击图片可放大 &nbsp;|&nbsp;
+    <span id="footTitle">梅西耶之旅 · Messier Journey</span> &nbsp;|&nbsp; 点击图片可放大 &nbsp;|&nbsp;
     键盘 <span class="accent">←</span> <span class="accent">→</span> 翻页
   </footer>
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片预览">
     <button class="lb-close" id="lbClose" aria-label="关闭">&times;</button>
-    <img id="lbImg" alt="">
-    <div class="lb-cap" id="lbCap"></div>
+    <button class="lb-arrow prev" id="lbPrev" aria-label="上一张">&#8249;</button>
+    <div class="lb-stage">
+      <img id="lbImg" alt="">
+      <div class="lb-info">
+        <div class="lb-cap" id="lbCap"></div>
+        <div class="lb-count" id="lbCount"></div>
+      </div>
+    </div>
+    <button class="lb-arrow next" id="lbNext" aria-label="下一张">&#8250;</button>
   </div>
 
   <script src="js/data.js" defer></script>
+  <script src="js/data-deepsky.js" defer></script>
   <script src="js/blackhole.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
